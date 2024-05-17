@@ -17,9 +17,11 @@ return {
     --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
     --   desc = "Previous buffer",
     -- },
-
-    -- mappings seen under group name "Buffer" 
-    
+    ["<leader>xx"] = {
+      function() require("trouble").toggle() end,
+      desc = "Toggle Trouble",
+    },
+    -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
     function()
         require("astronvim.utils.status").heirline.buffer_picker(
@@ -31,6 +33,11 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+
+    ["<leader>r"] = { name = "Cargo" },
+    ["<leader>rc"] = { "<CMD>w<CR><CMD>ToggleTerm<CR>cargo check<CR>", desc = "Check" },
+    ["<leader>rr"] = { "<CMD>w<CR><CMD>ToggleTerm<CR>cargo run<CR>", desc = "Run" },
+    ["<leader>rb"] = { "<CMD>w<CR><CMD>ToggleTerm<CR>cargo build<CR>", desc = "Build" },
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>r"] = { name = "Cargo"},
