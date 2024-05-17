@@ -18,11 +18,12 @@ return {
     --   desc = "Previous buffer",
     -- },
 
-    -- mappings seen under group name "Buffer"
+    -- mappings seen under group name "Buffer" 
+    
     ["<leader>bD"] = {
-      function()
+    function()
         require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
         )
       end,
       desc = "Pick to close",
@@ -31,10 +32,15 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-  },
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>r"] = { name = "Cargo"},
+    ["<leader>rr"] = {":w<CR>:TermExec cmd=\"cargo run\"<CR>", desc = "Run"},
+    ["<leader>rb"] = {":w<CR>:TermExec cmd=\"cargo build\"<CR>", desc = "Build"},
+    ["<leader>rc"] = {":w<CR>:TermExec cmd=\"cargo check\"<CR>", desc = "Check"},
+ },
   t = {
     -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,
+    ["<esc>"] = "<Cmd>execute v:count . \"ToggleTerm\"<CR>",
   },
+  
 }
