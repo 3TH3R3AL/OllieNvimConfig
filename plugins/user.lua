@@ -9,4 +9,10 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
 }
