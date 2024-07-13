@@ -37,7 +37,9 @@ return {
     ["<leader>r"] = { name = "Cargo" },
     ["<leader>rc"] = { "<CMD>w<CR><CMD>ToggleTerm<CR>cargo check<CR>", desc = "Check" },
     ["<leader>rr"] = { "<CMD>w<CR><CMD>ToggleTerm<CR>cargo run<CR>", desc = "Run" },
+    ["<leader>rf"] = { "<CMD>w<CR><CMD>ToggleTerm<CR>cargo run --release<CR>", desc = "Run Release" },
     ["<leader>rb"] = { "<CMD>w<CR><CMD>ToggleTerm<CR>cargo build<CR>", desc = "Build" },
+    ["<leader>rj"] = { "<CMD>w<CR><CMD>ToggleTerm<CR>cargo build --release<CR>", desc = "Build Release" },
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>r"] = { name = "Cargo"},
